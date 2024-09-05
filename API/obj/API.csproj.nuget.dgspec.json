@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kikin\\DatingApp\\DatingApp\\API\\API.csproj": {}
+    "C:\\Users\\Kikin\\DatingApp\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kikin\\DatingApp\\DatingApp\\API\\API.csproj": {
+    "C:\\Users\\Kikin\\DatingApp\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kikin\\DatingApp\\DatingApp\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Kikin\\DatingApp\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\Kikin\\DatingApp\\DatingApp\\API\\API.csproj",
+        "projectPath": "C:\\Users\\Kikin\\DatingApp\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Kikin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kikin\\DatingApp\\DatingApp\\API\\obj\\",
+        "outputPath": "C:\\Users\\Kikin\\DatingApp\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kikin\\AppData\\Roaming\\NuGet\\NuGet.Config"
