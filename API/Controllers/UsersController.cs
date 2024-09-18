@@ -4,10 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
-
-[ApiController]
-[Route("api/v1/[controller]")]
-public class UsersController : ControllerBase
+public class UsersController : BaseApiController
 {
     private readonly DataContext _context;
 
@@ -33,7 +30,7 @@ public class UsersController : ControllerBase
 
         return user;
     }
-    
+
     [HttpGet("{name}")] // api/v1/users/Calamardo
     public ActionResult<string> Ready(string name)
     {
