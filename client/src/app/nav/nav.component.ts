@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AccountService } from '../_service/account.service';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-nav',
