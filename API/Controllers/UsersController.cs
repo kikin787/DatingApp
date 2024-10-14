@@ -1,10 +1,9 @@
+namespace API.Controllers;
 using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
-namespace API.Controllers;
 
 [Authorize]
 public class UsersController : BaseApiController
@@ -31,14 +30,14 @@ public class UsersController : BaseApiController
     {
         var user = await _context.Users.FindAsync(id);
 
-        if (user == null) return NotFound();
+        if (user == null)
+        {
+            return NotFound();
+        }
 
         return user;
     }
-    
-    [HttpGet("{name}")] // api/v1/users/Calamardo
-    public ActionResult<string> Ready(string name)
-    {
-        return $"Hi {name}";
-    }
+
+    [HttpGet("{name}")] // api/users/Calamardo
+    public ActionResult<string> Ready(string name) => $"Hi {name}";
 }
