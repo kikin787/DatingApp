@@ -15,4 +15,5 @@ public class Photo
     // https://learn.microsoft.com/en-us/ef/core/modeling/relationships/one-to-many#required-one-to-many
     public int AppUserId { get; set; }
     public AppUser AppUser { get; set; } = null!;
+    // 
 }
