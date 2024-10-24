@@ -1,5 +1,8 @@
 namespace API.Controllers;
+
+using System;
 using API.Data;
+using API.DTOs;
 using API.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,21 +12,23 @@ public class UsersController : BaseApiController
 {
     private readonly IUserRepository _repository;
 
-    public UsersController(UserRepository repository)
+    public UsersController(IUserRepository repository)
     {
         _repository = repository;
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<MemberRes>>> GetAllAsync()
+    public async Task<ActionResult<IEnumerable<MemberResponse>>> GetAllAsync()
     {
         var users = await _repository.GetAllAsync();
 
-        return Ok(users);
+        return ToMemberResponse(user);
     }
 
+    private ActionResult<IEnumerable<MemberResponse>> ToMemberResponse(object user) => throw new NotImplementedException();
+
     [HttpGet("{id:int}")] // api/users/2
-    public async Task<ActionResult<AppUser>> GetByIdAsync(int id)
+    public async Task<ActionResult<MemberResponse>> GetByIdAsync(int id)
     {
         var user = await _repository.GetByIdAsync(id);
 
@@ -32,11 +37,16 @@ public class UsersController : BaseApiController
             return NotFound();
         }
 
-        return user;
+        return new MemberResponse
+        {
+            Id = user.Id,
+            City = user.City,
+            Country = user.Country,
+        };
     }
 
     [HttpGet("{username}")] // api/users/Calamardo
-    public async Task<ActionResult<AppUser>> GetByUsernameAsync(string username)
+    public async Task<ActionResult<MemberResponse>> GetByUsernameAsync(string username)
     {
         var user = await _repository.GetByUsernameAsync(username);
 
