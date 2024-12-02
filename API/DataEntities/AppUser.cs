@@ -1,7 +1,5 @@
 namespace API.DataEntities;
 
-using API.Extensions;
-
 public class AppUser
 {
     public int Id { get; set; }
