@@ -14,36 +14,36 @@ export class TestErrorsComponent {
   private http = inject(HttpClient);
   validationErrors: string[] = [];
 
-  get400error(): void{
-    this.http.get(this.baseUrl + "buggy/bad-requets").subscribe({
+  get400Error(): void {
+    this.http.get(this.baseUrl + "buggy/bad-request").subscribe({
       next: (response) => console.log(response),
       error: (error) => console.log(error)
     })
   }
 
-  get401error(): void{
+  get401Error(): void {
     this.http.get(this.baseUrl + "buggy/auth").subscribe({
       next: (response) => console.log(response),
       error: (error) => console.log(error)
     })
   }
 
-  get404error(): void{
+  get404Error(): void {
     this.http.get(this.baseUrl + "buggy/not-found").subscribe({
       next: (response) => console.log(response),
       error: (error) => console.log(error)
     })
   }
 
-  get500error(): void{
+  get500Error(): void {
     this.http.get(this.baseUrl + "buggy/server-error").subscribe({
       next: (response) => console.log(response),
       error: (error) => console.log(error)
     })
   }
 
-  get400ValidationError(): void{
-    this.http.post(this.baseUrl + "account/registrer",{}).subscribe({
+  get400ValidationError(): void {
+    this.http.post(this.baseUrl + "account/register", {}).subscribe({
       next: (response) => console.log(response),
       error: (error) => {
         console.log(error);

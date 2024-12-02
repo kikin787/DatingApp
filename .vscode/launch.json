@@ -10,13 +10,10 @@
             "request": "launch",
             "projectPath": "${workspaceFolder}/API.csproj"
         },
-        
         {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach"
         }
-
-
     ]
 }

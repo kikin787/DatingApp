@@ -1,4 +1,3 @@
-.droptownToggle,
-.droptown-item {
-  cursor: pointer;
+.dropdownToggle, .dropdown-item {
+    cursor: pointer;
 }

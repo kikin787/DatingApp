@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RegistrerComponent } from '../registrer/registrer.component';
+import { RegisterComponent } from "../register/register.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RegistrerComponent],
+  imports: [RegisterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
