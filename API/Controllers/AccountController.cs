@@ -21,7 +21,7 @@ public class AccountController(
         }
 
         return Ok();
-
+    //
         // using var hmac = new HMACSHA512();
         // var user = new AppUser
         // {
