@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
     <div class="container">
         <a class="navbar-brand" routerLink="/" routerLinkActive="active">Dating App</a>
-
+<!--  -->
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
             @if (accountService.currentUser()) {
                 <li class="nav-item">
@@ -21,6 +21,10 @@
 
         @if (accountService.currentUser()) {
             <div dropdown class="dropdown">
+                <img
+                    class="me-2"
+                    src="{{accountService.currentUser()?.photoUrl || './assets/user.png'}}"
+                    alt="User main photo">
                 <a dropdownToggle class="dropdown-toogle text-light text-decoration-none">
                     Welcome {{accountService.currentUser()?.username | titlecase}}
                 </a>

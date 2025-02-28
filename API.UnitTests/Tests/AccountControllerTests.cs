@@ -1,150 +1,146 @@
-namespace API.UnitTests.Tests;
+﻿namespace API.UnitTests.Tests;
 
-using System.Net;
-using System.Text;
 using API.DTOs;
 using API.UnitTests.Helpers;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using Xunit;
 
 public class AccountControllerTests
 {
-    private string apiRoute = "api/account";
-    private readonly HttpClient _client;
+    private readonly string apiRoute = "api/account";
+    private readonly HttpClient client;
     private HttpResponseMessage httpResponse;
-    private string requestUrl;
-    private string registerObjetct;
-    private string loginObjetct;
+    private string requestUri;
+    private string requestObject;
+    private string requestObjetct;
     private HttpContent httpContent;
-    
+
     public AccountControllerTests()
     {
-        _client = TestHelper.Instance.Client;
-        httpResponse = new HttpResponseMessage();
-        requestUrl = string.Empty;
-        registerObjetct = string.Empty;
-        loginObjetct = string.Empty;
-        httpContent = new StringContent(string.Empty);
+        client = TestHelper.Instance.Client;
     }
 
     [Theory]
-    [InlineData("OK", "Angel", "Prueba12")]
-    public async Task RegisterUserOK(string statusCode, string usernamex, string passwordx)
+    [InlineData("BadRequest", "lisa", "123456")]
+    public async Task RegisterShouldBadRequest(string statusCode, string username, string password)
     {
         // Arrange
-        requestUrl = $"{apiRoute}/register";
-        var registerRequest = new RegisterRequest
+        requestUri = $"{apiRoute}/register";
+        var request = new RegisterRequest
         {
-            Username = usernamex,
-            Password = passwordx
+            Username = username,
+            Password = password
         };
 
-        registerObjetct = GetRegisterObject(registerRequest);
-        httpContent = GetHttpContent(registerObjetct);
-        httpResponse = await _client.PostAsync(requestUrl, httpContent);
-        var reponse = await httpResponse.Content.ReadAsStringAsync();
+        requestObject = GetRegisterObject(request);
+        httpContent = GetHttpContent(requestObject);
+
+        // Act
+        httpResponse = await client.PostAsync(requestUri, httpContent);
+
+        // Assert
+        Assert.Equal(Enum.Parse<HttpStatusCode>(statusCode, true), httpResponse.StatusCode);
         Assert.Equal(statusCode, httpResponse.StatusCode.ToString());
     }
 
     [Theory]
-    [InlineData("BadRequest", "Bob", "Prueba12")]
-    public async Task RegisterUserBR(string statusCode, string usernamex, string passwordx)
+    [InlineData("OK", "arturo", "123456")]
+    public async Task RegisterShouldOk(string statusCode, string username, string password)
     {
         // Arrange
-        requestUrl = $"{apiRoute}/register";
-        var registerRequest = new RegisterRequest
+        requestUri = $"{apiRoute}/register";
+        var request = new RegisterRequest
         {
-            Username = usernamex,
-            Password = passwordx
+            Username = username,
+            Password = password
         };
 
-        registerObjetct = GetRegisterObject(registerRequest);
-        httpContent = GetHttpContent(registerObjetct);
-        httpResponse = await _client.PostAsync(requestUrl, httpContent);
-        var reponse = await httpResponse.Content.ReadAsStringAsync();
+        requestObject = GetRegisterObject(request);
+        httpContent = GetHttpContent(requestObject);
+
+        // Act
+        httpResponse = await client.PostAsync(requestUri, httpContent);
+
+        // Assert
+        Assert.Equal(Enum.Parse<HttpStatusCode>(statusCode, true), httpResponse.StatusCode);
         Assert.Equal(statusCode, httpResponse.StatusCode.ToString());
     }
 
     [Theory]
-    [InlineData("OK", "Bob", "123456")]
-    public async Task LoginrUserOK(string statusCode, string usernamex, string passwordx)
+    [InlineData("Unauthorized", "lisa", "password")]
+    public async Task LoginShouldUnauthorized(string statusCode, string username, string password)
     {
         // Arrange
-        requestUrl = $"{apiRoute}/login";
-        var loginRequest = new LoginRequest
+        requestUri = $"{apiRoute}/login";
+        var request = new LoginRequest
         {
-            Username = usernamex,
-            Password = passwordx
+            Username = username,
+            Password = password
         };
 
-        loginObjetct = GetLoginObject(loginRequest);
-        httpContent = GetHttpContent(loginObjetct);
-        httpResponse = await _client.PostAsync(requestUrl, httpContent);
-        var reponse = await httpResponse.Content.ReadAsStringAsync();
+        requestObjetct = GetRegisterObject(request);
+        httpContent = GetHttpContent(requestObjetct);
+
+        // Act
+        httpResponse = await client.PostAsync(requestUri, httpContent);
+
+        // Assert
+        Assert.Equal(Enum.Parse<HttpStatusCode>(statusCode, true), httpResponse.StatusCode);
         Assert.Equal(statusCode, httpResponse.StatusCode.ToString());
     }
 
     [Theory]
-    [InlineData("Unauthorized", "Francisco", "HolaMundo")]
-    public async Task LoginrUserUN1(string statusCode, string usernamex, string passwordx)
+    [InlineData("OK", "arenita", "123456")]
+    public async Task LoginShouldOK(string statusCode, string username, string password)
     {
         // Arrange
-        requestUrl = $"{apiRoute}/login";
-        var loginRequest = new LoginRequest
+        requestUri = $"{apiRoute}/login";
+        var request = new LoginRequest
         {
-            Username = usernamex,
-            Password = passwordx
+            Username = username,
+            Password = password
         };
+        requestObjetct = GetRegisterObject(request);
+        httpContent = GetHttpContent(requestObjetct);
 
-        loginObjetct = GetLoginObject(loginRequest);
-        httpContent = GetHttpContent(loginObjetct);
-        httpResponse = await _client.PostAsync(requestUrl, httpContent);
-        var reponse = await httpResponse.Content.ReadAsStringAsync();
-        Assert.Equal(statusCode, httpResponse.StatusCode.ToString());
-    }
+        // Act
+        httpResponse = await client.PostAsync(requestUri, httpContent);
 
-    [Theory]
-    [InlineData("Unauthorized", "Bob", "HolaMundoError")]
-    public async Task LoginrUserUN2(string statusCode, string usernamex, string passwordx)
-    {
-        // Arrange
-        requestUrl = $"{apiRoute}/login";
-        var loginRequest = new LoginRequest
-        {
-            Username = usernamex,
-            Password = passwordx
-        };
-
-        loginObjetct = GetLoginObject(loginRequest);
-        httpContent = GetHttpContent(loginObjetct);
-        httpResponse = await _client.PostAsync(requestUrl, httpContent);
-        var reponse = await httpResponse.Content.ReadAsStringAsync();
+        // Assert
+        Assert.Equal(Enum.Parse<HttpStatusCode>(statusCode, true), httpResponse.StatusCode);
         Assert.Equal(statusCode, httpResponse.StatusCode.ToString());
     }
 
     #region Privated methods
+
     private static string GetRegisterObject(RegisterRequest registerDto)
     {
         var entityObject = new JObject()
-            {
-                { nameof(registerDto.Username), registerDto.Username },
-                { nameof(registerDto.Password), registerDto.Password }
-            };
+        {
+            { nameof(registerDto.Username), registerDto.Username },
+            { nameof(registerDto.Password), registerDto.Password }
+        };
+
         return entityObject.ToString();
     }
 
-    private static string GetLoginObject(LoginRequest loginDto)
+    private static string GetRegisterObject(LoginRequest loginDto)
     {
         var entityObject = new JObject()
-            {
-                { nameof(loginDto.Username), loginDto.Username },
-                { nameof(loginDto.Password), loginDto.Password }
-            };
+        {
+            { nameof(loginDto.Username), loginDto.Username },
+            { nameof(loginDto.Password), loginDto.Password }
+        };
         return entityObject.ToString();
     }
 
-    private static StringContent GetHttpContent(string objectToCode)
-    {
-        return new StringContent(objectToCode, Encoding.UTF8, "application/json");
-    }
+    private static StringContent GetHttpContent(string objectToEncode) =>
+        new(objectToEncode, Encoding.UTF8, "application/json");
+
     #endregion
 }
