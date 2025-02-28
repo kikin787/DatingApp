@@ -3,7 +3,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { User } from '../_models/user';
 import { environment } from '../../environments/environment';
-// 
+
 @Injectable({
   providedIn: 'root'
 })
