@@ -5,7 +5,6 @@ import { TextInputComponent } from "../_forms/text-input/text-input.component";
 import { DatePickerComponent } from "../_forms/date-picker/date-picker.component";
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-register',
   standalone: true,
