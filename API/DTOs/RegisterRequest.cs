@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 public class RegisterRequest
 {
-    // 
     [Required] public string Username { get; set; } = string.Empty;
     [Required] public string? KnownAs { get; set; }
     [Required] public string? Gender { get; set; }
