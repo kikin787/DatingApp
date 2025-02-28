@@ -2,7 +2,7 @@ import { NgIf } from '@angular/common';
 import { Component, input, Self } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerConfig, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-// 
+
 @Component({
   selector: 'app-date-picker',
   standalone: true,
