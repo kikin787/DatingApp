@@ -7,6 +7,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { PhotoEditorComponent } from "../photo-editor/photo-editor.component";
 
+
 @Component({
   selector: 'app-member-edit',
   standalone: true,
