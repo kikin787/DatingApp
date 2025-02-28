@@ -8,7 +8,6 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 [Authorize]
-
 public class UsersController : BaseApiController
 {
     private readonly IUserRepository _repository;
