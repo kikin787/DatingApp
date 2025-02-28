@@ -6,7 +6,6 @@ import { AccountService } from '../../_services/account.service';
 import { environment } from '../../../environments/environment';
 import { MembersService } from '../../_services/members.service';
 import { Photo } from '../../_models/photo';
-// 
 @Component({
   selector: 'app-photo-editor',
   standalone: true,

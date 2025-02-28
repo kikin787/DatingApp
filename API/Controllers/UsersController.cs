@@ -7,7 +7,6 @@ using API.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
 [Authorize]
 public class UsersController : BaseApiController
 {
