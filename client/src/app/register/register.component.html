@@ -10,7 +10,6 @@
             <input type="radio" class="form-check-input" value="male" formControlName="gender">Male
         </label>
     </div>
-
     <app-text-input [formControl]="$any(registerForm.controls['username'])" [label]="'Username'" />
     <app-text-input [formControl]="$any(registerForm.controls['knownAs'])" [label]="'Known as'" />
     <app-date-picker [formControl]="$any(registerForm.controls['birthDay'])" [label]="'Birthday'" [maxDate]="maxDate"/>
