@@ -3,7 +3,6 @@ using API.Data;
 using API.Helpers;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
-
 public static class ApplicationServiceExtensions
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)

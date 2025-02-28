@@ -1,5 +1,5 @@
 namespace API.Extensions;
-
+// 
 using System.Security.Claims;
 
 public static class ClaimsPrincipleExtensions
