@@ -61,7 +61,8 @@ public class APIWebApplicationFactory<IStartup> : WebApplicationFactory<Startup>
                     try
                     {
                         await context.Database.MigrateAsync();
-                        await Seed.SeedUsersAsync(context);
+                        // await Seed.SeedUsersAsync(context);
+                        __loadTestData(context);
                     }
                     catch (Exception ex)
                     {
