@@ -1,4 +1,5 @@
 namespace API.DataEntities;
+
 public class AppUser
 {
     public int Id { get; set; }
