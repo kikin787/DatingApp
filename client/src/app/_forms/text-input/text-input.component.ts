@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, input, Self } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl, ReactiveFormsModule } from '@angular/forms';
-// 
+
 @Component({
   selector: 'app-text-input',
   standalone: true,

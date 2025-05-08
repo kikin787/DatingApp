@@ -9,7 +9,6 @@
                     <p><strong>Information: </strong>You have made some changes. If you leave without saving, the changes will be lost.</p>
                 </div>
             }
-            <!--  -->
         </div>
         <div class="col-4">
             <div class="card">
@@ -25,11 +24,11 @@
                     </div>
                     <div>
                         <strong>Last active:</strong>
-                        <p>{{member.lastActive}}</p>
+                        <p>{{member.lastActive | timeago}}</p>
                     </div>
                     <div>
                         <strong>Member since:</strong>
-                        <p>{{member.created}}</p>
+                        <p>{{member.created | date: "longDate"}}</p>
                     </div>
                 </div>
                 <div class="card-footer">
