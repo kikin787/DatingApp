@@ -6,7 +6,7 @@ import { TimeagoModule } from 'ngx-timeago';
 import { Message } from '../_models/message';
 import { RouterModule } from '@angular/router';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-// 
+
 @Component({
   selector: 'app-messages',
   standalone: true,
