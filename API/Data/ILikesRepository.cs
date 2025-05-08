@@ -11,5 +11,4 @@ public interface ILikesRepository
     public void RemoveLike(UserLike like);
     public void AddLike(UserLike like);
     public Task<bool> SaveChangesAsync();
-
 }
