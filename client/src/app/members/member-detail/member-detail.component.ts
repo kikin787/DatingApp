@@ -9,7 +9,7 @@ import { DatePipe } from '@angular/common';
 import { MemberMessagesComponent } from "../member-messages/member-messages.component";
 import { Message } from '../../_models/message';
 import { MessagesService } from '../../_services/messages.service';
-// 
+
 @Component({
   selector: 'app-member-detail',
   standalone: true,
