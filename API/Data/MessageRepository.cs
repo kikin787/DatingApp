@@ -9,7 +9,7 @@ using API.Helpers;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
-// 
+
 public class MessageRepository(DataContext context, IMapper mapper) : IMessageRepository
 {
     public void Add(Message message) => context.Messages.Add(message);
