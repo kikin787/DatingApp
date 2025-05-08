@@ -3,7 +3,6 @@ namespace API.Data;
 using API.DataEntities;
 using API.DTOs;
 using API.Helpers;
-
 public interface ILikesRepository
 {
     public Task<UserLike?> GetUserLikeAsync(int sourceUserId, int targerUserId);
