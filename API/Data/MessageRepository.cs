@@ -39,7 +39,6 @@ public class MessageRepository(DataContext context, IMapper mapper) : IMessageRe
         return await PagedList<MessageResponse>
             .CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
     }
-
     public async Task<IEnumerable<MessageResponse>> GetThreadAsync(string currentUsername, string recipientUsername)
     {
         var messages = await context.Messages
