@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 import { PhotoEditorComponent } from "../photo-editor/photo-editor.component";
 import { TimeagoModule } from 'ngx-timeago';
 import { DatePipe } from '@angular/common';
-//
+
 @Component({
   selector: 'app-member-edit',
   standalone: true,
