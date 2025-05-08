@@ -2,7 +2,6 @@
     <div class="text-center mt-3">
         <h2>Your matches - {{membersService.paginatedResult()?.pagination?.totalItems}}</h2>
     </div>
-
     <div class="container mt-3">
         <form #form="ngForm" class="d-flex mb-3" (ngSubmit)="loadMembers()">
             <div class="d-flex mx-2">
