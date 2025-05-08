@@ -8,7 +8,7 @@ import { PaginatedResult } from '../_models/pagination';
 import { UserParams } from '../_models/userParams';
 import { AccountService } from './account.service';
 import { setPaginationHeaders, setPaginationResponse } from './paginationHelper';
-//
+
 @Injectable({
   providedIn: 'root'
 })
