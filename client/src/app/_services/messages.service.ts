@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { setPaginationHeaders, setPaginationResponse } from './paginationHelper';
 import { Message } from '../_models/message';
 import { PaginatedResult } from '../_models/pagination';
-// 
+
 @Injectable({
   providedIn: 'root'
 })
