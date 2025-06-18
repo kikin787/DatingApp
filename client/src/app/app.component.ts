@@ -4,7 +4,7 @@ import { NavComponent } from "./nav/nav.component";
 import { AccountService } from './_services/account.service';
 import { HomeComponent } from "./home/home.component";
 import { NgxSpinnerComponent } from 'ngx-spinner';
-
+// 
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -24,6 +24,6 @@ export class AppComponent implements OnInit {
     const userString = localStorage.getItem("user");
     if (!userString) return;
     const user = JSON.parse(userString);
-    this.accountService.currentUser.set(user);
+    this.accountService.setCurrentUser(user);
   }
 }
