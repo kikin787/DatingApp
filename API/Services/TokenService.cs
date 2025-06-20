@@ -1,5 +1,4 @@
 namespace API.Services;
-
 using System.Globalization;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
