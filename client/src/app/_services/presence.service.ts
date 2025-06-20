@@ -1,4 +1,3 @@
-
 import { inject, Injectable, signal } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';

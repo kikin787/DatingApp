@@ -9,7 +9,6 @@ using API.UnitOfWork;
 using AutoMapper;
 using Microsoft.AspNetCore.SignalR;
 
-
 public class MessageHub(
     IUnitOfWork unitOfWork,
     IMapper mapper,
