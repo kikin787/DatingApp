@@ -10,7 +10,6 @@ import { FormsModule, NgForm } from '@angular/forms';
   templateUrl: './member-messages.component.html',
   styleUrl: './member-messages.component.css'
 })
-
 export class MemberMessagesComponent implements AfterViewChecked {
   @ViewChild("messageForm") messageForm?: NgForm;
   @ViewChild("scrollMe") scrollContainer?: any;
