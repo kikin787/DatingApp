@@ -12,6 +12,7 @@ import { PresenceService } from '../../_services/presence.service';
 import { AccountService } from '../../_services/account.service';
 import { HubConnectionState } from '@microsoft/signalr';
 
+
 @Component({
   selector: 'app-member-detail',
   standalone: true,
