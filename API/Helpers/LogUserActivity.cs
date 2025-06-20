@@ -6,6 +6,7 @@ using API.Extensions;
 using API.UnitOfWork;
 using Microsoft.AspNetCore.Mvc.Filters;
 
+
 public class LogUserActivity : IAsyncActionFilter
 {
     public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
