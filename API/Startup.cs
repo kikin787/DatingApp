@@ -1,4 +1,3 @@
-
 namespace API;
 
 using API.Extensions;
