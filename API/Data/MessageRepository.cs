@@ -9,7 +9,6 @@ using API.Helpers;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
-
 public class MessageRepository(DataContext context, IMapper mapper) : IMessageRepository
 {
     public void Add(Message message) => context.Messages.Add(message);
@@ -85,7 +84,7 @@ public class MessageRepository(DataContext context, IMapper mapper) : IMessageRe
 Optimization result from changing INCLUDE to PROJECTTO in line 59
 
 Include:
-SELECT "m"."Id", "m"."Content", "m"."DateRead", "m"."MessageSent", "m"."RecipientDeleted", "m"."RecipientId", "m"."RecipientUsername", "m"."SenderDeleted", "m"."SenderId", "m"."SenderUsername", "a"."Id", "a"."AccessFailedCount", "a"."BirthDay", "a"."City", "a"."ConcurrencyStamp", "a"."Country", "a"."Created", "a"."Email", "a"."EmailConfirmed", "a"."Gender", "a"."Interests", "a"."Introduction", "a"."KnownAs", "a"."LastActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."LookingFor", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "a0"."Id", "p"."Id", "p"."AppUserId", "p"."IsMain", "p"."PublicId", "p"."Url", "a0"."AccessFailedCount", "a0"."BirthDay", "a0"."City", "a0"."ConcurrencyStamp", "a0"."Country", "a0"."Created", "a0"."Email", "a0"."EmailConfirmed", "a0"."Gender", "a0"."Interests", "a0"."Introduction", "a0"."KnownAs", "a0"."LastActive", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."LookingFor", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName", "p0"."Id", "p0"."AppUserId", "p0"."IsMain", "p0"."PublicId", "p0"."Url"   
+SELECT "m"."Id", "m"."Content", "m"."DateRead", "m"."MessageSent", "m"."RecipientDeleted", "m"."RecipientId", "m"."RecipientUsername", "m"."SenderDeleted", "m"."SenderId", "m"."SenderUsername", "a"."Id", "a"."AccessFailedCount", "a"."BirthDay", "a"."City", "a"."ConcurrencyStamp", "a"."Country", "a"."Created", "a"."Email", "a"."EmailConfirmed", "a"."Gender", "a"."Interests", "a"."Introduction", "a"."KnownAs", "a"."LastActive", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."LookingFor", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "a0"."Id", "p"."Id", "p"."AppUserId", "p"."IsMain", "p"."PublicId", "p"."Url", "a0"."AccessFailedCount", "a0"."BirthDay", "a0"."City", "a0"."ConcurrencyStamp", "a0"."Country", "a0"."Created", "a0"."Email", "a0"."EmailConfirmed", "a0"."Gender", "a0"."Interests", "a0"."Introduction", "a0"."KnownAs", "a0"."LastActive", "a0"."LockoutEnabled", "a0"."LockoutEnd", "a0"."LookingFor", "a0"."NormalizedEmail", "a0"."NormalizedUserName", "a0"."PasswordHash", "a0"."PhoneNumber", "a0"."PhoneNumberConfirmed", "a0"."SecurityStamp", "a0"."TwoFactorEnabled", "a0"."UserName", "p0"."Id", "p0"."AppUserId", "p0"."IsMain", "p0"."PublicId", "p0"."Url"
       FROM "Messages" AS "m"
       INNER JOIN "AspNetUsers" AS "a" ON "m"."SenderId" = "a"."Id"
       INNER JOIN "AspNetUsers" AS "a0" ON "m"."RecipientId" = "a0"."Id"
