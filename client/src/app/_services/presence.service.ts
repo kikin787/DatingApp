@@ -9,6 +9,7 @@ import { take } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class PresenceService {
   hubsUrl = environment.hubsUrl;
   private hubConnection?: HubConnection;
