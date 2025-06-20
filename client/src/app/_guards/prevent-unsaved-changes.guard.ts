@@ -1,3 +1,4 @@
+
 import { CanDeactivateFn } from '@angular/router';
 import { MemberEditComponent } from '../members/member-edit/member-edit.component';
 import { ConfirmService } from '../_services/confirm.service';
@@ -9,6 +10,6 @@ export const preventUnsavedChangesGuard: CanDeactivateFn<MemberEditComponent> = 
   if (component.editForm?.dirty) {
     return confirmService.confirm() ?? false;
   }
-  
+
   return true;
 };
