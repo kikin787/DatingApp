@@ -11,7 +11,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-
 [ExcludeFromCodeCoverage]
 public class Program
 {
