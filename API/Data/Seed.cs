@@ -6,7 +6,6 @@ using System.Text.Json;
 using API.DataEntities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
 [ExcludeFromCodeCoverage]
 public class Seed
 {

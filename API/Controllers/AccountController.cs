@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
-
 public class AccountController(
     UserManager<AppUser> userManager,
     ITokenService tokenService,
