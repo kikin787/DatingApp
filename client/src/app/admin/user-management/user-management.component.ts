@@ -4,6 +4,7 @@ import { User } from '../../_models/user';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { RolesModalComponent } from '../../modals/roles-modal/roles-modal.component';
 
+
 @Component({
   selector: 'app-user-management',
   standalone: true,
@@ -16,7 +17,7 @@ export class UserManagementComponent implements OnInit {
   private modalService = inject(BsModalService);
   users: User[] = [];
   bsModalRef: BsModalRef<RolesModalComponent> = new BsModalRef<RolesModalComponent>();
-  
+
   ngOnInit(): void {
     this.getUsersWithRoles();
   }

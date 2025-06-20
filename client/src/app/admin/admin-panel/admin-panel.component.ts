@@ -4,7 +4,6 @@ import { UserManagementComponent } from '../user-management/user-management.comp
 import { HasRoleDirective } from '../../_directives/has-role.directive';
 import { PhotoManagementComponent } from '../photo-management/photo-management.component';
 
-
 @Component({
   selector: 'app-admin-panel',
   standalone: true,
