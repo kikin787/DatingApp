@@ -2,7 +2,6 @@ import { Component, computed, inject, input, ViewEncapsulation } from '@angular/
 import { Member } from '../../_models/member';
 import { RouterLink } from '@angular/router';
 import { LikesService } from '../../_services/likes.service';
-
 import { PresenceService } from '../../_services/presence.service';
 
 @Component({

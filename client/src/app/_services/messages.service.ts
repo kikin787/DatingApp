@@ -11,7 +11,6 @@ import { MessageGroup } from '../_models/messagegroup';
 @Injectable({
   providedIn: 'root'
 })
-
 export class MessagesService {
   baseUrl = environment.apiUrl;
   hubUrl = environment.hubsUrl;
@@ -38,7 +37,7 @@ export class MessagesService {
       this.messageThread.update(messages => [...messages, message]);
     });
 
-    this.hubConnection.on("UpdatedGroup", (group: MessageGroup) =>
+    this.hubConnection.on("UpdatedGroup", (group: MessageGroup) => 
     {
       if (group.connections.some(x => x.username === otherUsername)) {
         this.messageThread.update(messages => {

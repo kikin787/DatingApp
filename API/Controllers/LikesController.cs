@@ -7,6 +7,7 @@ using API.Extensions;
 using API.Helpers;
 using API.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
+
 public class LikesController(IUnitOfWork unitOfWork) : BaseApiController
 {
     [HttpPost("{targetUserId:int}")]

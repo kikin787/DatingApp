@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './photo-management.component.css'
 })
 export class PhotoManagementComponent {
+
 }

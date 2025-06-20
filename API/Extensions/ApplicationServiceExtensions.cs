@@ -1,5 +1,4 @@
 namespace API.Extensions;
-
 using API.Data;
 using API.Helpers;
 using API.Services;

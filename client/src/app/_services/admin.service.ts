@@ -9,7 +9,7 @@ import { User } from '../_models/user';
 export class AdminService {
   baseUrl = environment.apiUrl;
   private http = inject(HttpClient);
-
+  
   getUsersWithRoles() {
     return this.http.get<User[]>(this.baseUrl + "admin/users-with-roles");
   }

@@ -19,7 +19,6 @@ import { HubConnectionState } from '@microsoft/signalr';
   templateUrl: './member-detail.component.html',
   styleUrl: './member-detail.component.css'
 })
-
 export class MemberDetailComponent implements OnInit, OnDestroy {
   @ViewChild("memberTabs", { static: true }) memberTabs?: TabsetComponent;
   private messagesService = inject(MessagesService);

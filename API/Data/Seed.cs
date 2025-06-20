@@ -6,8 +6,8 @@ using System.Text.Json;
 using API.DataEntities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-[ExcludeFromCodeCoverage]
 
+[ExcludeFromCodeCoverage]
 public class Seed
 {
     public static async Task SeedUsersAsync(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)

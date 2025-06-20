@@ -6,7 +6,6 @@ import { ConfirmDialogComponent } from '../modals/confirm-dialog/confirm-dialog.
 @Injectable({
   providedIn: 'root'
 })
-
 export class ConfirmService {
   bsModalRef?: BsModalRef;
   private modalService = inject(BsModalService);

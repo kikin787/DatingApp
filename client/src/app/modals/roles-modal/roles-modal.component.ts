@@ -8,8 +8,6 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
   templateUrl: './roles-modal.component.html',
   styleUrl: './roles-modal.component.css'
 })
-
-
 export class RolesModalComponent {
   bsModalRef = inject(BsModalRef);
   username = "";

@@ -4,7 +4,6 @@ using API.DataEntities;
 using API.DTOs;
 using API.Helpers;
 
-
 public interface IUserRepository
 {
     public Task<IEnumerable<AppUser>> GetAllAsync();

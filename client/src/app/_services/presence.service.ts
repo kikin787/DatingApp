@@ -9,7 +9,6 @@ import { take } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-
 export class PresenceService {
   hubsUrl = environment.hubsUrl;
   private hubConnection?: HubConnection;
@@ -24,21 +23,21 @@ export class PresenceService {
       })
       .withAutomaticReconnect()
       .build();
-
+    
     this.hubConnection.start().catch(error => console.log(error));
 
     this.hubConnection.on("UserIsOnline", username => {
       this.onlineUsers.update(users => [...users, username]);
     });
-
+    
     this.hubConnection.on("UserIsOffline", username => {
       this.onlineUsers.update(users => users.filter(u => u !== username));
     });
-
+    
     this.hubConnection.on("GetOnlineUsers", usernames => {
       this.onlineUsers.set(usernames);
     });
-
+    
     this.hubConnection.on("NewMessageReceived", ({ username, knownAs }) => {
       this.toastr.info(knownAs + " sent you a message! Click me!")
         .onTap

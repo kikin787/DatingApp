@@ -16,7 +16,7 @@ export class UserManagementComponent implements OnInit {
   private modalService = inject(BsModalService);
   users: User[] = [];
   bsModalRef: BsModalRef<RolesModalComponent> = new BsModalRef<RolesModalComponent>();
-
+  
   ngOnInit(): void {
     this.getUsersWithRoles();
   }
