@@ -9,5 +9,4 @@ export interface Message {
     content: string;
     dateRead?: Date;
     messageSent: Date;
-    
   }

@@ -2,6 +2,7 @@ namespace API.Extensions;
 
 using System.Globalization;
 using System.Security.Claims;
+
 public static class ClaimsPrincipleExtensions
 {
     public static int GetUserId(this ClaimsPrincipal user)

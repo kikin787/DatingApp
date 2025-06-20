@@ -4,7 +4,7 @@ import { NavComponent } from "./nav/nav.component";
 import { AccountService } from './_services/account.service';
 import { HomeComponent } from "./home/home.component";
 import { NgxSpinnerComponent } from 'ngx-spinner';
-// 
+
 @Component({
   selector: 'app-root',
   standalone: true,
