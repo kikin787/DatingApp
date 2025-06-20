@@ -1,5 +1,6 @@
 namespace API.DataEntities;
 
+
 public class Connection
 {
     public required string ConnectionId { get; set; }
