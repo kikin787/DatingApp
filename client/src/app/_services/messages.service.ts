@@ -11,6 +11,7 @@ import { MessageGroup } from '../_models/messagegroup';
 @Injectable({
   providedIn: 'root'
 })
+
 export class MessagesService {
   baseUrl = environment.apiUrl;
   hubUrl = environment.hubsUrl;

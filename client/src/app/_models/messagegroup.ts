@@ -3,6 +3,7 @@ export interface MessageGroup {
     connections: Connection[];
 }
 
+
 export interface Connection {
     connectionId: string;
     username: string;
